@@ -1,0 +1,685 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Rendering should display the search bar 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "borderBottomColor": "#929292",
+      "borderBottomWidth": 1,
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 17,
+      "paddingTop": 0,
+      "zIndex": 9,
+    }
+  }
+>
+  <StatusBar
+    animated={false}
+    showHideTransition="fade"
+  />
+  <TouchableWithoutFeedback
+    onPress={[Function]}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "space-between",
+            "width": 70,
+          },
+          Object {
+            "display": "flex",
+          },
+        ]
+      }
+    >
+      <Image
+        onPress={[Function]}
+        source={
+          Object {
+            "uri": "avatarurl",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 25,
+            "height": 50,
+            "left": 0,
+            "marginRight": 5,
+            "top": 0,
+            "width": 50,
+          }
+        }
+      />
+      <Themed.Icon
+        color="#000"
+        name="sort-down"
+        type="font-awesome"
+      />
+    </View>
+  </TouchableWithoutFeedback>
+  <ElevatedView
+    elevation={10}
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "left": 15,
+          "paddingLeft": 5,
+          "position": "absolute",
+          "top": 62,
+        },
+      ]
+    }
+  >
+    <FlatList
+      ItemSeparatorComponent={[Function]}
+      data={
+        Array [
+          Object {
+            "key": "Logout",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    />
+  </ElevatedView>
+  <Text
+    style={
+      Object {
+        "fontSize": 25,
+        "fontWeight": "700",
+      }
+    }
+  >
+    Code Lab
+  </Text>
+  <View
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "position": "absolute",
+        "right": 14,
+        "top": 14,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Search..."
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "gray",
+            "borderRadius": 7,
+            "borderWidth": 1,
+            "display": "none",
+            "height": 35,
+            "padding": 5,
+            "right": 0,
+            "top": 0,
+            "width": 250,
+          },
+          Object {
+            "display": "flex",
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <Themed.Icon
+    color="#929292"
+    name="search"
+    onPress={[Function]}
+    style={
+      Object {
+        "marginLeft": 20,
+        "marginRight": 70,
+        "zIndex": 999,
+      }
+    }
+    type="font-awesome"
+  />
+</View>
+`;
+
+exports[`Header Rendering should display the search bar 2`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "borderBottomColor": "#929292",
+      "borderBottomWidth": 1,
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 17,
+      "paddingTop": 0,
+      "zIndex": 9,
+    }
+  }
+>
+  <StatusBar
+    animated={false}
+    showHideTransition="fade"
+  />
+  <TouchableWithoutFeedback
+    onPress={[Function]}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "space-between",
+            "width": 70,
+          },
+          Object {
+            "display": "flex",
+          },
+        ]
+      }
+    >
+      <Image
+        onPress={[Function]}
+        source={
+          Object {
+            "uri": "avatarurl",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 25,
+            "height": 50,
+            "left": 0,
+            "marginRight": 5,
+            "top": 0,
+            "width": 50,
+          }
+        }
+      />
+      <Themed.Icon
+        color="#000"
+        name="sort-down"
+        type="font-awesome"
+      />
+    </View>
+  </TouchableWithoutFeedback>
+  <ElevatedView
+    elevation={10}
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "left": 15,
+          "paddingLeft": 5,
+          "position": "absolute",
+          "top": 62,
+        },
+      ]
+    }
+  >
+    <FlatList
+      ItemSeparatorComponent={[Function]}
+      data={
+        Array [
+          Object {
+            "key": "Logout",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      style={
+        Object {
+          "display": "flex",
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    />
+  </ElevatedView>
+  <Text
+    style={
+      Object {
+        "fontSize": 25,
+        "fontWeight": "700",
+      }
+    }
+  >
+    Code Lab
+  </Text>
+  <View
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "position": "absolute",
+        "right": 14,
+        "top": 14,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Search..."
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "gray",
+            "borderRadius": 7,
+            "borderWidth": 1,
+            "display": "none",
+            "height": 35,
+            "padding": 5,
+            "right": 0,
+            "top": 0,
+            "width": 250,
+          },
+          Object {
+            "display": "none",
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <Themed.Icon
+    color="#929292"
+    name="search"
+    onPress={[Function]}
+    style={
+      Object {
+        "marginLeft": 20,
+        "marginRight": 70,
+        "zIndex": 999,
+      }
+    }
+    type="font-awesome"
+  />
+</View>
+`;
+
+exports[`Header Rendering should display the search bar 3`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "borderBottomColor": "#929292",
+      "borderBottomWidth": 1,
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 17,
+      "paddingTop": 0,
+      "zIndex": 9,
+    }
+  }
+>
+  <StatusBar
+    animated={false}
+    showHideTransition="fade"
+  />
+  <TouchableWithoutFeedback
+    onPress={[Function]}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "space-between",
+            "width": 70,
+          },
+          Object {
+            "display": "flex",
+          },
+        ]
+      }
+    >
+      <Image
+        onPress={[Function]}
+        source={
+          Object {
+            "uri": "avatarurl",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 25,
+            "height": 50,
+            "left": 0,
+            "marginRight": 5,
+            "top": 0,
+            "width": 50,
+          }
+        }
+      />
+      <Themed.Icon
+        color="#000"
+        name="sort-down"
+        type="font-awesome"
+      />
+    </View>
+  </TouchableWithoutFeedback>
+  <ElevatedView
+    elevation={10}
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "left": 15,
+          "paddingLeft": 5,
+          "position": "absolute",
+          "top": 62,
+        },
+      ]
+    }
+  >
+    <FlatList
+      ItemSeparatorComponent={[Function]}
+      data={
+        Array [
+          Object {
+            "key": "Logout",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      style={
+        Object {
+          "display": "flex",
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    />
+  </ElevatedView>
+  <Text
+    style={
+      Object {
+        "fontSize": 25,
+        "fontWeight": "700",
+      }
+    }
+  >
+    Code Lab
+  </Text>
+  <View
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "position": "absolute",
+        "right": 14,
+        "top": 14,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Search..."
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "gray",
+            "borderRadius": 7,
+            "borderWidth": 1,
+            "display": "none",
+            "height": 35,
+            "padding": 5,
+            "right": 0,
+            "top": 0,
+            "width": 250,
+          },
+          Object {
+            "display": "none",
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <Themed.Icon
+    color="#929292"
+    name="search"
+    onPress={[Function]}
+    style={
+      Object {
+        "marginLeft": 20,
+        "marginRight": 70,
+        "zIndex": 999,
+      }
+    }
+    type="font-awesome"
+  />
+</View>
+`;
+
+exports[`Header Rendering should type in search bar 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "borderBottomColor": "#929292",
+      "borderBottomWidth": 1,
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 17,
+      "paddingTop": 0,
+      "zIndex": 9,
+    }
+  }
+>
+  <StatusBar
+    animated={false}
+    showHideTransition="fade"
+  />
+  <TouchableWithoutFeedback
+    onPress={[Function]}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "space-between",
+            "width": 70,
+          },
+          Object {
+            "display": "flex",
+          },
+        ]
+      }
+    >
+      <Image
+        onPress={[Function]}
+        source={
+          Object {
+            "uri": "avatarurl",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 25,
+            "height": 50,
+            "left": 0,
+            "marginRight": 5,
+            "top": 0,
+            "width": 50,
+          }
+        }
+      />
+      <Themed.Icon
+        color="#000"
+        name="sort-down"
+        type="font-awesome"
+      />
+    </View>
+  </TouchableWithoutFeedback>
+  <ElevatedView
+    elevation={10}
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "left": 15,
+          "paddingLeft": 5,
+          "position": "absolute",
+          "top": 62,
+        },
+      ]
+    }
+  >
+    <FlatList
+      ItemSeparatorComponent={[Function]}
+      data={
+        Array [
+          Object {
+            "key": "Logout",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    />
+  </ElevatedView>
+  <Text
+    style={
+      Object {
+        "fontSize": 25,
+        "fontWeight": "700",
+      }
+    }
+  >
+    Code Lab
+  </Text>
+  <View
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "position": "absolute",
+        "right": 14,
+        "top": 14,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Search..."
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "gray",
+            "borderRadius": 7,
+            "borderWidth": 1,
+            "display": "none",
+            "height": 35,
+            "padding": 5,
+            "right": 0,
+            "top": 0,
+            "width": 250,
+          },
+          Object {
+            "display": "none",
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <Themed.Icon
+    color="#929292"
+    name="search"
+    onPress={[Function]}
+    style={
+      Object {
+        "marginLeft": 20,
+        "marginRight": 70,
+        "zIndex": 999,
+      }
+    }
+    type="font-awesome"
+  />
+</View>
+`;

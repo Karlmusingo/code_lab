@@ -22,18 +22,17 @@ import ElevatedView from "react-native-elevated-view";
 const { StatusBarManager } = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === "ios" ? 20 : StatusBarManager.HEIGHT;
 
-class Header extends Component {
+export class Header extends Component {
   state = {
     displaySearch: false,
     displayDropdown: false,
-    dropdownMenu: [{ key: "Logout" }],
-    isLoggedIn: false
+    dropdownMenu: [{ key: "Logout" }]
   };
 
   displaySearch = () => {
     const { displaySearch } = this.state;
-    if (displaySearch) this.props.search("");
-    this.textInput.clear();
+    this.props.search("");
+    if (displaySearch) this.textInput.clear();
     this.setState({ displaySearch: !displaySearch });
   };
 
@@ -42,9 +41,9 @@ class Header extends Component {
   };
 
   logout = async () => {
-    await AsyncStorage.clear();
     this.displayDropdown();
     this.props.navigation.navigate("Home");
+    await AsyncStorage.clear();
   };
 
   render() {
@@ -62,7 +61,7 @@ class Header extends Component {
                 source={
                   data.viewer
                     ? { uri: data.viewer.avatarUrl }
-                    : require("../assets/avatar.png")
+                    : { uri: "image" }
                 }
                 style={styles.image}
                 onPress={this.displayDropdown}
@@ -213,12 +212,12 @@ const styles = StyleSheet.create({
   }
 });
 
-// export default Header;
-
-export default graphql(gql`
+export const VIEWER_QUERY = gql`
   query {
     viewer {
       avatarUrl
     }
   }
-`)(Header);
+`;
+
+export default graphql(VIEWER_QUERY)(Header);

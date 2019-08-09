@@ -17,7 +17,6 @@ export default class Home extends React.Component {
     try {
       const { access_token } = await auth();
       await AsyncStorage.setItem("access_token", access_token);
-      const token = await AsyncStorage.getItem("access_token");
       this.props.navigation.navigate("List");
     } catch ({ message }) {
       return message;

@@ -5,14 +5,29 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest --coverage -u"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "collectCoverageFrom": [
+      "components/*.js",
+      "screens/*.js",
+      "utils/*.js"
+    ],
+    "setupFilesAfterEnv": [
+      "./setupFile.js"
+    ]
   },
   "dependencies": {
     "apollo-boost": "^0.4.3",
     "apollo-link-context": "^1.0.18",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "expo": "^34.0.1",
     "expo-font": "^6.0.1",
     "graphql": "^14.4.2",
+    "jest-enzyme": "^7.1.0",
     "native-base": "^2.13.4",
     "react": "16.8.3",
     "react-apollo": "^2.5.8",
@@ -28,7 +43,9 @@
     "react-navigation": "^3.11.1"
   },
   "devDependencies": {
-    "babel-preset-expo": "^6.0.0"
+    "babel-preset-expo": "^6.0.0",
+    "jest-expo": "^34.0.0",
+    "react-test-renderer": "^16.8.6"
   },
   "private": true
 }

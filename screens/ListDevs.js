@@ -13,7 +13,7 @@ import gql from "graphql-tag";
 import Header from "../components/Header";
 import Dev from "../components/Dev";
 
-class ListDevs extends Component {
+export class ListDevs extends Component {
   state = { data: [] };
   componentDidUpdate(prevProps) {
     const { data } = this.props;
@@ -51,6 +51,8 @@ class ListDevs extends Component {
         <View style={styles.container}>
           {this.props.data.loading ? (
             <Text style={{ padding: 10 }}>Loading...</Text>
+          ) : this.props.data.error ? (
+            <Text style={{ padding: 10 }}>Oups, Something went wrong ):</Text>
           ) : (
             <ScrollView>
               {data.map(dev => (
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
 
 // export default ListDevs;
 
-export default graphql(gql`
+export const DEV_LIST_QUERY = gql`
   query {
     search(query: "location:lagos", type: USER, first: 100) {
       userCount
@@ -119,4 +121,6 @@ export default graphql(gql`
       avatarUrl
     }
   }
-`)(ListDevs);
+`;
+
+export default graphql(DEV_LIST_QUERY)(ListDevs);
