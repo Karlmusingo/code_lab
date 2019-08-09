@@ -60,13 +60,11 @@ const mocks = [
 
 describe("Render the ListDevs screen", () => {
   it("should render the ListDevs screen", () => {
-    const component = renderer
-      .create(
-        <MockedProvider mocks={mocks} addTypename={false}>
-          <ListDevsComp />
-        </MockedProvider>
-      )
-      .toJSON();
+    const component = shallow(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ListDevsComp />
+      </MockedProvider>
+    );
 
     expect(component).toMatchSnapshot();
   });
