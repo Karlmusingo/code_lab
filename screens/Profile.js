@@ -61,13 +61,14 @@ class Profile extends Component {
                     }}
                     style={{ height: 140, width: 140, borderRadius: 70 }}
                   />
-                  <TouchableHighlight>
+                  <TouchableHighlight
+                    onPress={() =>
+                      navigation.navigate("Web", { login: dev.login })
+                    }
+                  >
                     <Icon
                       name="share-square"
                       size={45}
-                      onPress={() =>
-                        navigation.navigate("Web", { login: dev.login })
-                      }
                       color="#fff"
                       type="font-awesome"
                     />

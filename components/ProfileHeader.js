@@ -55,6 +55,7 @@ class ProfileHeader extends Component {
           <TouchableHighlight>
             <Icon
               // style={styles.searchIcon}
+              id="share"
               name="share-alt"
               onPress={this.onShare}
               color="#fff"

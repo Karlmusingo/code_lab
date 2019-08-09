@@ -9,11 +9,15 @@ class AuthLoading extends React.Component {
 
   // Fetch the token from storage then navigate to our appropriate place
   redirect = async () => {
-    const token = await AsyncStorage.getItem("access_token");
+    try {
+      const token = await AsyncStorage.getItem("access_token");
 
-    // This will switch to the App screen or Auth screen and this loading
-    // screen will be unmounted and thrown away.
-    this.props.navigation.navigate(token ? "List" : "Home");
+      // This will switch to the App screen or Auth screen and this loading
+      // screen will be unmounted and thrown away.
+      this.props.navigation.navigate(token ? "List" : "Home");
+    } catch (e) {
+      console.log(">>>=========================================> ", e);
+    }
   };
 
   // Render any loading content that you like here

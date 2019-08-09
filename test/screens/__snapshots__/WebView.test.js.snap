@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render the profile component should render the profile component 1`] = `
+<WebView
+  cacheEnabled={true}
+  originWhitelist={
+    Array [
+      "http://*",
+      "https://*",
+    ]
+  }
+  source={
+    Object {
+      "uri": "https://github.com/login",
+    }
+  }
+  useSharedProcessPool={true}
+  useWebKit={true}
+/>
+`;

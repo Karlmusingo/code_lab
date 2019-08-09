@@ -12,3 +12,5 @@ web-report/
 
 yarn.lock
 yarn-error.log
+
+coverage/
