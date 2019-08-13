@@ -26,7 +26,7 @@ export class Header extends Component {
   state = {
     displaySearch: false,
     displayDropdown: false,
-    dropdownMenu: [{ key: "Logout" }]
+    dropdownMenu: [{ icon: "sign-out-alt", key: "Logout" }]
   };
 
   displaySearch = () => {
@@ -95,10 +95,16 @@ export class Header extends Component {
               >
                 <View
                   style={{
+                    display: "flex",
+                    flexDirection: "row",
                     backgroundColor: "#fff",
-                    width: 100
+                    width: 110
                   }}
                 >
+                  <Image
+                    style={styles.logoutIcon}
+                    source={require("../assets/signout.png")}
+                  />
                   <Text style={styles.dropdownItem}>{item.key}</Text>
                 </View>
               </TouchableHighlight>
@@ -190,6 +196,12 @@ const styles = StyleSheet.create({
     zIndex: 999,
     marginLeft: 20,
     marginRight: 70
+  },
+  logoutIcon: {
+    width: 15,
+    height: 15,
+    padding: 10,
+    margin: 7
   },
   dropdown: {
     position: "absolute",
