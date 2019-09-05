@@ -5,24 +5,55 @@ import {
   View,
   Dimensions,
   ScrollView,
+  Platform,
   StatusBar,
   SafeAreaView,
-  RefreshControl
+  RefreshControl,
+  FlatList,
+  TouchableHighlight,
+  Image,
+  NativeModules,
+  AsyncStorage
 } from "react-native";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 import Header from "../components/Header";
 import Dev from "../components/Dev";
+import ElevatedView from "react-native-elevated-view";
+
+const { StatusBarManager } = NativeModules;
+const STATUSBAR_HEIGHT = Platform.OS === "ios" ? 20 : StatusBarManager.HEIGHT;
 
 export class ListDevs extends Component {
-  state = { data: [], refreshing: false };
+  state = {
+    data: [],
+    refreshing: false,
+    displayDropdown: false,
+    dropdownMenu: [{ icon: "sign-out-alt", key: "Logout" }]
+  };
   componentDidUpdate(prevProps) {
     const { data } = this.props;
-
     if (data.loading !== prevProps.data.loading) {
       if (data.search) this.setState({ data: data.search.edges });
     }
   }
+
+  componentDidMount() {
+    const { data } = this.props;
+    if (data) {
+      if (data.search) this.setState({ data: data.search.edges });
+    }
+  }
+
+  displayDropdown = () => {
+    this.setState({ displayDropdown: !this.state.displayDropdown });
+  };
+
+  logout = async () => {
+    this.displayDropdown();
+    this.props.navigation.navigate("Home");
+    await AsyncStorage.clear();
+  };
 
   search = text => {
     const { data } = this.props;
@@ -53,6 +84,12 @@ export class ListDevs extends Component {
   render() {
     const { data } = this.state;
 
+    if (this.props.data) {
+      // delete this.props.data.search.edges;
+      // console.log(this.props.data.search.userCount);
+      // console.log(this.props.data.error);
+    }
+
     return (
       <SafeAreaView>
         <StatusBar
@@ -62,6 +99,7 @@ export class ListDevs extends Component {
         />
         <Header
           search={this.search}
+          displayDropdown={this.displayDropdown}
           isLoggedIn={true}
           navigation={this.props.navigation}
         />
@@ -89,6 +127,48 @@ export class ListDevs extends Component {
             </ScrollView>
           )}
         </View>
+        <ElevatedView
+          elevation={20}
+          style={[
+            styles.dropdown
+            // { display: this.state.displayDropdown ? "flex" : "none" }
+          ]}
+        >
+          <FlatList
+            style={{
+              zIndex: 999,
+              display: this.state.displayDropdown ? "flex" : "none"
+            }}
+            ItemSeparatorComponent={({ highlighted }) => (
+              <View
+                style={[styles.separator, highlighted && { marginLeft: 0 }]}
+              />
+            )}
+            data={[...this.state.dropdownMenu]}
+            renderItem={({ item }) => (
+              <TouchableHighlight
+                onPress={item => {
+                  this.logout();
+                }}
+              >
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    backgroundColor: "#fff",
+                    width: 110
+                  }}
+                >
+                  <Image
+                    style={styles.logoutIcon}
+                    source={require("../assets/signout.png")}
+                  />
+                  <Text style={styles.dropdownItem}>{item.key}</Text>
+                </View>
+              </TouchableHighlight>
+            )}
+          />
+        </ElevatedView>
       </SafeAreaView>
     );
   }
@@ -100,12 +180,40 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#F0F0F0",
     width: "100%",
+    zIndex: 1,
     borderRadius: 8
   },
   text: {
     color: "white",
     fontSize: 20,
     fontWeight: "bold"
+  },
+
+  logoutIcon: {
+    width: 15,
+    height: 15,
+    padding: 10,
+    margin: 7
+  },
+  dropdown: {
+    position: "absolute",
+    display: "flex",
+    top: Platform.OS === "android" ? STATUSBAR_HEIGHT + 62 : 62,
+    left: 15,
+    paddingLeft: 5,
+    zIndex: 999
+  },
+  dropdownItem: {
+    fontSize: 20,
+    padding: 5,
+    paddingLeft: 5
+  },
+  separator: {
+    backgroundColor: "#fff",
+    borderBottomColor: "#8492A6",
+    borderBottomWidth: 1,
+    padding: 3,
+    width: 100
   }
 });
 
