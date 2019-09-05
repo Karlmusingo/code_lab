@@ -19,6 +19,7 @@ const githubFields = [
 
 const githubLogin = async () => {
   let redirectUrl = AuthSession.getRedirectUrl();
+  console.log(redirectUrl);
   try {
     const { params } = await AuthSession.startAsync({
       authUrl:

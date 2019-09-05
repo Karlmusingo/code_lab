@@ -3,12 +3,11 @@
     "name": "Code Lab",
     "slug": "codelabapp",
     "privacy": "public",
+    "description": "Code Lab helps find developers from Kigali, Lagos, Kampala and Nairobi. It uses the GitHub GraphQL API",
     "sdkVersion": "34.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "scheme": "codelabapp",
+    "platforms": ["ios", "android"],
+    "githubUrl": "https://github.com/Karlmusingo/code_lab",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,11 +19,13 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.karlmusingo.codelabapp"
+    },
+    "android": {
+      "package": "com.karlmusingo.codelabapp"
     }
   }
 }

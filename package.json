@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "apollo-boost": "^0.4.3",
+    "apollo-cache-persist": "^0.1.1",
     "apollo-link-context": "^1.0.18",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -30,7 +31,7 @@
     "jest-enzyme": "^7.1.0",
     "native-base": "^2.13.4",
     "react": "16.8.3",
-    "react-apollo": "^2.5.8",
+    "react-apollo": "^3.0.0",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
     "react-native-elements": "^1.1.0",

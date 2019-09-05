@@ -26,7 +26,7 @@ export class Header extends Component {
   state = {
     displaySearch: false,
     displayDropdown: false,
-    dropdownMenu: [{ key: "Logout" }]
+    dropdownMenu: [{ icon: "sign-out-alt", key: "Logout" }]
   };
 
   displaySearch = () => {
@@ -47,12 +47,12 @@ export class Header extends Component {
   };
 
   render() {
-    const { isLoggedIn, data, search } = this.props;
+    const { isLoggedIn, data, search, displayDropdown } = this.props;
 
     return (
       <View style={styles.header}>
         <StatusBar />
-        <TouchableWithoutFeedback onPress={this.displayDropdown}>
+        <TouchableWithoutFeedback onPress={displayDropdown}>
           {isLoggedIn ? (
             <View
               style={[styles.avatar, { display: isLoggedIn ? "flex" : "none" }]}
@@ -64,7 +64,7 @@ export class Header extends Component {
                     : { uri: "image" }
                 }
                 style={styles.image}
-                onPress={this.displayDropdown}
+                onPress={displayDropdown}
               />
               <Icon name="sort-down" color="#000" type="font-awesome" />
             </View>
@@ -72,39 +72,7 @@ export class Header extends Component {
             <Text />
           )}
         </TouchableWithoutFeedback>
-        <ElevatedView
-          elevation={10}
-          style={[
-            styles.dropdown
-            // { display: this.state.displayDropdown ? "flex" : "none" }
-          ]}
-        >
-          <FlatList
-            style={{ display: this.state.displayDropdown ? "flex" : "none" }}
-            ItemSeparatorComponent={({ highlighted }) => (
-              <View
-                style={[styles.separator, highlighted && { marginLeft: 0 }]}
-              />
-            )}
-            data={[...this.state.dropdownMenu]}
-            renderItem={({ item }) => (
-              <TouchableHighlight
-                onPress={item => {
-                  this.logout();
-                }}
-              >
-                <View
-                  style={{
-                    backgroundColor: "#fff",
-                    width: 100
-                  }}
-                >
-                  <Text style={styles.dropdownItem}>{item.key}</Text>
-                </View>
-              </TouchableHighlight>
-            )}
-          />
-        </ElevatedView>
+
         <Text style={styles.banner}>Code Lab</Text>
         <View style={styles.search}>
           <TextInput
@@ -145,7 +113,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    zIndex: 9
+    zIndex: 999
   },
   banner: {
     fontWeight: "700",
@@ -191,12 +159,19 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 70
   },
+  logoutIcon: {
+    width: 15,
+    height: 15,
+    padding: 10,
+    margin: 7
+  },
   dropdown: {
     position: "absolute",
     display: "flex",
-    top: Platform.OS === "android" ? STATUSBAR_HEIGHT + 62 : 62,
+    top: 200,
     left: 15,
-    paddingLeft: 5
+    paddingLeft: 5,
+    zIndex: 999
   },
   dropdownItem: {
     fontSize: 20,
